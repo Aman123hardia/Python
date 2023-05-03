@@ -1,0 +1,14 @@
+class Student:
+  def __init__(self,name,rollno,marks):
+   self.name=name
+   self.age=rollno
+   self.marks=marks
+
+  def talk(self):
+   print("Hello I am :",self.name)
+   print("My Age is:",self.age)
+   print("My Marks are:",self.marks)
+
+
+s1=Student("Durga",101,80)
+s1.talk()

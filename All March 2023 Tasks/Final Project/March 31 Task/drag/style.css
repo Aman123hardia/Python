@@ -1,0 +1,32 @@
+
+  
+  .box {
+    border: 1px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 2%;
+    cursor: move;
+  }
+  
+  .box.over {
+    border: 3px dotted #666;
+  }
+  
+  [draggable] {
+    user-select: none;
+  }
+
+   .spinner-lever-button {
+     display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px hsl(103, 53%, 83%);
+  } 

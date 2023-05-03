@@ -1,0 +1,23 @@
+@media only screen and (max-width: 1300px) and (min-width: 900px)  {
+    
+    #vol-control{
+        transform: rotate(90deg);
+        margin-top: 80%;
+       }
+    }
+
+@media only screen and (max-width: 900px) and (min-width: 400px)  {
+    
+    #vol-control{
+        transform: rotate(180deg);
+       }
+    }
+
+
+    @media only screen and (max-width: 900px) and (min-width: 400px)  {
+    
+        #vol-control{
+            transform: rotate(180deg);
+           }
+        }
+    

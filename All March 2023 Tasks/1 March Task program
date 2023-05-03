@@ -1,0 +1,250 @@
+Q1-function that two argument of array and return comman element in a new array
+__________________________________________________________________
+
+
+import java.util.*;  
+public class Main
+{
+	public static void main(String[] args) {
+
+    Scanner sc=new Scanner(System.in);
+    Main m1=new Main();
+    System.out.println("Enter the length of first array :-");
+    int len1=sc.nextInt();
+    System.out.println("Enter the length of Second array :-");
+    int len2=sc.nextInt();
+    int arr1[]=new int[len1];
+    int arr2[]=new int[len2];
+
+    
+    for(int i=0;i<arr1.length;i++){
+        System.out.println("Enter the  value of "+(i+1)+" Element of array1");
+        arr1[i]=sc.nextInt();
+    }
+    
+     System.out.println("_______________________________________");
+	  
+	for(int i=0;i<arr2.length;i++){
+      System.out.println("Enter the  value of "+(i+1)+" Element of array2");
+      arr2[i]=sc.nextInt();
+    }
+    
+   int arr[]=m1.commonElementOfArray(arr1,arr2);
+    for(int k=0;k<arr.length;k++){
+        System.out.print(arr[k]+" ");
+    }
+    
+}
+
+   public int[] commonElementOfArray(int arr1[],int arr2[]){
+           int newArray[]=new int[arr1.length];
+           int index=0;
+       
+       for(int i=0;i<arr1.length;i++){
+           for(int j=0;j<arr2.length;j++){
+               if(arr1[i]==arr2[j]){
+                   newArray[index]=arr1[i];
+            
+                   index++;
+               }
+           }
+       }
+       
+     return newArray;
+       
+       
+   }
+
+
+}
+__________________________________________________________________
+
+Q-2] Given string is polindrome or not return boolean result
+
+__________________________________________________________________
+
+
+import java.util.*;  
+public class Main
+{
+	public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    Main m1=new Main();
+    System.out.println("Enter the String");
+    String str1=sc.nextLine();
+    boolean result=m1.checkPolindromeString(str1);
+    System.out.println("Given String is Polindrome ="+result);
+	}
+    
+    boolean checkPolindromeString(String str1){
+        String str2="";
+        for(int i=str1.length()-1;i>=0;i--){
+            str2+=str1.charAt(i);
+            
+        }
+        System.out.println(str1+" "+str2);
+        if(str1.equals(str2))
+        return true;
+        else
+        return false;
+    }
+
+
+}
+
+
+__________________________________________________________________
+
+
+Q-3] Fibbonacci number as a user input
+__________________________________________________________________
+import java.util.*;  
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    int num1=0;
+	    int num2=1;
+	    int temp=0;
+	    System.out.print(num1+" "+num2+" ");
+	    
+	    for(int i=2;i<=num;i++){
+	        num1=num1+num2;
+	        System.out.print(num1+" ");
+	        temp=num2;
+	        num2=num1;
+	        num1=temp;
+	        
+	    }
+	  
+	}
+}
+__________________________________________________________________
+
+
+Q-4] sequence of character how many time come in string
+
+__________________________________________________________________________
+
+ public class Main
+{
+  public void getCountingChar (String str)
+  {
+    int len = str.length ();
+    int count[] = new int[len];
+    char let[] = new char[len];
+    int counting = 0;
+
+
+    for (int i = 0; i < len; i++)
+      {
+	if (i > 0)
+	  {
+	  
+	    for (int j = i-1; j >=0; j--)
+	      {
+	        char check = ((Character) (str.charAt (i)));
+		   if (let[j]==check)
+		   break;
+		else
+		  {
+		   
+		    let[i] = str.charAt (i);
+		    for (int k = i; k < len; k++)
+		      {
+			    check = ((Character) (str.charAt (k)));
+			    if (let[i] == check)
+			    counting++;
+		      }
+		      	    System.out.println (let[i] + " occure at = " + counting + " times");
+	        count[i] = counting;
+	        counting = 0;
+	        break;
+		  }
+	      }
+	  }
+	else
+	  {
+       
+	    let[i] = str.charAt (i);
+	    for (int j = i; j < len; j++)
+	      {
+		char check = ((Character) (str.charAt (j)));
+		if (let[i] == check)
+		  counting++;
+	      }
+	      
+	    System.out.println (let[i] + " occure at = " + counting + " times");
+	    count[i] = counting;
+	    counting = 0;
+	   
+	  }
+	  
+
+
+      }
+  }
+
+  public static void main (String args[])
+  {
+    Main m1=new Main();
+    String str = "neitesh";
+    m1.getCountingChar (str);
+  }
+}
+   ______________________________________________________________________________________-
+Q=5]find index of array which is sum of targeted value;
+
+import java.util.*;  
+public class Main
+{
+public static void main(String[] args) {
+
+    Scanner sc=new Scanner(System.in);
+    Main m1=new Main();
+    System.out.println("Enter the length of first array :-");
+    int len1=sc.nextInt();
+    int arr1[]=new int[len1];
+     
+    for(int i=0;i<arr1.length;i++){
+        System.out.println("Enter the  value of "+(i+1)+" Element of array1");
+        arr1[i]=sc.nextInt();
+    }
+    
+    System.out.println("Enter the targeted value:- ");
+    int tarValue=sc.nextInt();
+    int ind[]=m1.findAddValueIndex(arr1,tarValue);
+    
+    System.out.print("first index "+ind[0]+" second index "+ind[1]);
+	  
+	 
+	    
+	}
+	
+	
+	public int[] findAddValueIndex(int arr1[],int tarValue){
+	    int index[]=new int[2];
+	    int in=0;
+	    for(int i=0;i<arr1.length-1;i++){
+	        for(int j=i+1;j<arr1.length;j++){
+	        if(tarValue==arr1[i]+arr1[j]){
+	         index[0]=i;
+	         index[1]=j;
+	         return index;
+	        }
+	      }
+	      
+	    }
+	    return index;
+	}
+	
+}
+    
+ ____________________________________________________________________________________-
+   
+    
+    
+    
+ 
+ 

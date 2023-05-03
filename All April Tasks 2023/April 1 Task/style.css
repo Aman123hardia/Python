@@ -1,0 +1,16 @@
+/* 
+#chart{
+    top:0;
+  
+}
+
+
+#vol-control{
+    transform:rotate(90deg);
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #vol-control {
+        transform: rotate(180deg);
+        }
+  } */

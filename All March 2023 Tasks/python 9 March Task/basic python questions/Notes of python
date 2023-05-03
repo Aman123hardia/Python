@@ -1,0 +1,67 @@
+what is python ?
+Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed
+
+why python we use?
+Today, Python is one of the most popular programming languages because of its beginner-friendly syntax, efficiency, and applicability to a wide range of use cases. Python syntax is similar to English, which makes it relatively easy to read and understand even if you've never written a line of code before.
+
+What are 3 benefits of Python?
+Top Reasons to Learn Python
+Data science.
+Scientific and mathematical computing.
+Web development.
+Finance and trading.
+System automation and administration.
+Computer graphics.
+Basic game development.
+Security and penetration testing.
+
+#this is used for set dictionary and touple and list
+https://www.educative.io/answers/list-vs-tuple-vs-set-vs-dictionary-in-python
+
+frozen set are immutable
+
+
+
+
+ List is a collection which is ordered and changeable. Allows duplicate members. this maintain by index
+  Tuple is a collection which is ordered and unchangeable. Allows duplicate members by  index
+ Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members. not index
+Dictionary is a collection which is ordered** and changeable. No duplicate members.not index
+
+
+//list methods
+append()	Adds an element at the end of the list
+clear()	Removes all the elements from the list
+copy()	Returns a copy of the list
+count()	Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()	Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()	Removes the element at the specified position
+remove()	Removes the item with the specified value
+reverse()	Reverses the order of the list
+
+//tuple methods
+count()	Returns the number of times a specified value occurs in a tuple
+index()	Searches the tuple for a specified value and returns the position of where it was found
+
+
+
+//set methods Description
+add()	Adds an element to the set
+clear()	Removes all the elements from the set
+copy()	Returns a copy of the set
+difference()	Returns a set containing the difference between two or more sets
+difference_update()	Removes the items in this set that are also included in another, specified set
+discard()	Remove the specified item
+intersection()	Returns a set, that is the intersection of two other sets
+intersection_update()	Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()	Returns whether two sets have a intersection or not
+issubset()	Returns whether another set contains this set or not
+issuperset()	Returns whether this set contains another set or not
+pop()	Removes an element from the set
+remove()	Removes the specified element
+symmetric_difference()	Returns a set with the symmetric differences of two sets
+symmetric_difference_update()	inserts the symmetric differences from this set and another
+union()	Return a set containing the union of sets
+update()	Update the set with the union of this set and others

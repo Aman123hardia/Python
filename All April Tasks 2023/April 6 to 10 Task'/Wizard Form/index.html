@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+  <div class="container bg-light border border-success">
+    <header class="text-center fs-1">Scholorship Form</header>
+       <div class="container-fluid mt-3 mb-3">
+           <ul class="list-unstyled multi-steps"> </ul>
+       </div>
+    
+  	<form id="formData">
+
+      <!-- fieldsets persnol Information--->
+      <fieldset id="step1">
+        <div class="row mt-2 form-group">
+      
+					   <div class=" form-group col-md-6 mt-2  ">
+               <label for="Name">First Name </label>
+               <input type="text" onkeyup="validation()" name="firstName" class="form-control error " placeholder="First name" required>
+               <p>Enter Valid Name</p>
+              </div>
+            
+						<div class="col-md-6 mt-2 ">
+              <label for="Name">Last Name </label>
+              <input id='lastName' type="text" onkeyup="validation()" class="form-control" placeholder="Last name" name="lastName" require>
+            </div>
+            
+						<div class="col-md-6 mt-2 ">
+              <label for="Name">Email</label>
+              <input type="text" onkeyup="validation()" id='email' class="form-control" placeholder="Email" name="email" require>
+            </div>
+            
+						<div class="col-md-6 mt-2 ">
+              <label for="Name">Phone</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Contact Number" id='phone' name="phone" require>
+            </div>
+
+            <div class="md-form md-outline input-with-post-icon datepicker col-md-6 mt-2" id="customDays">
+              <label for="Customization">DOB</label>
+              <input placeholder="Select date" name="date" type="date" id="date" class="form-control" min="2000-01-01" max="2020-01-01" require>
+            </div>
+
+            <div class="md-form md-outline input-with-post-icon datepicker col-md-6 mt-2" id="customDays">
+              <label for="Customization"  >Adhar Number</label>
+              <input placeholder="Enter Your Adhar" type="text" onkeyup="validation()" id="Customization" id="adhar"  class="form-control" name="adhar" require>
+            </div>
+
+
+            <div class="caste col-md-6 mt-3 ">
+              <label for="browser" class="form-label">Caste:</label>
+              <select class="form-select" aria-label="Default select example" style="width:100%">
+               <span> <option selected>ST</option></span>
+               <span><option value="1">SC</option></span>
+                <span> <option value="2">OBC</option></span>
+                  <span></span><option value="3">Gen</option></span>
+              </select>
+						</div>
+
+            <div class="col-md-6 mt-3">
+              <label for="browser" class="form-label">Religion:</label>
+              <select  class="form-control" id="browser1"  onkeyup="validation()" name="religion" require></select>
+            </div>
+           
+						<div class="form-check col-md-2 mt-3 ml-3 pl-5 bg-white">Gender</div>
+            
+						<div class="form-check col-md-2 mt-3 p-1 ml-3 bg-white">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Male
+              </label>
+            </div>
+            
+						<div class="form-check col-md-2 mt-3 p-1 ml-3 bg-white">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  require>
+              <label class="form-check-label" for="flexRadioDefault2"> Female</label>
+            </div>
+            
+            <div class="container-fluid mt-3 mb-3">
+              <button class=" btn btn-secondary mt-4 mb-3 col-md-12" id='next1' onclick="nextButton(event)">Next</button>
+            </div>
+          
+				</div>
+      </fieldset>
+
+      <!-- fieldsets  Address Information--->
+      <fieldset id="step2">
+				<div class="row mt-2">
+				   <div class="col-md-12 mt-3 ">
+              <label for="Name">Current Address </label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Current Address" name="currentAdd" require>
+            </div>
+           
+						<div class="col-md-12 mt-3 ">
+              <label for="Name">Permanent Address </label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Permanent Address" name="permanentAdd" require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">City</label>
+              <select class="form-control"  onkeyup="validation()" id="city" name="city1"></select>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">State</label>
+              <select class="form-control" id="state" name="state1"></select>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">Pincode</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Pincode"  name="pincode1" require>
+            </div>
+            
+						<div class="col-md-6 mt-3">
+              <label for="Name">Country</label>
+              <input type="text" onkeyup="validation()" class="form-control" list="browsers" placeholder="Enter Your Country"  >
+              <select class="form-control" id="country" name="country1" require></select>
+            </div>
+            
+						<div class="col-lg-6 mt-4 mb-3">
+              <button class="btn btn-secondary col-md-12" onclick="previousButton(event)">Previous</button>
+            </div>
+            
+						<div class="col-lg-6 mt-4">
+              <button class="btn btn-secondary  col-md-12" id='next2' onclick="nextButton(event)">Next</button>
+            </div>
+					</div>
+      </fieldset>
+
+      <!-- fieldsets  Institue Information--->
+      <fieldset id="step3">
+				<div class="row mt-2">
+            <div class="col-md-12 mt-3 ">
+              <label for="Name">Institute Name or School Name</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Institue Name" name="institute" require>
+            </div>
+            
+						<div class="col-md-12 mt-3 ">
+              <label for="Name">Address</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Permanent Address" name="address"  require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">City</label>
+              <input type="text" onkeyup="validation()" class="form-control" list="browsers" placeholder="Enter Your City" name="city2"  require>
+              <datalist id="city"></datalist>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">State</label>
+              <input type="text" onkeyup="validation()" class="form-control" list="browsers" placeholder="Enter Your State" name="state2"  require>
+              <datalist id="state"></datalist>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">Pincode</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Pincode" name="pincode2"  require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">Country</label>
+              <input type="text" onkeyup="validation()" class="form-control" list="browsers" placeholder="Enter Your Country"  name="country2" require>
+              <datalist id="country"></datalist>
+            </div>
+            
+						<div class="col-lg-6 mt-4 mb-3">
+              <button class="btn btn-secondary col-md-12" onclick="previousButton(event)">Previous</button>
+            </div>
+            
+						<div class="col-lg-6 mt-4">
+              <button class="btn btn-secondary  col-md-12" id='next3' onclick="nextButton(event)">Next</button>
+            </div>
+					</div>
+      </fieldset>
+
+      <!-- fieldsets  Applicant Details--->
+      <fieldset id="step4">
+				<div class="row mt-2">
+            <div class="col-md-6 mt-2 ml-2">
+              <label for="Name">Course Name or Class Name</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter  Course Name " name="course" require>
+            </div>
+            
+						<div class="col-md-6 mt-2 ">
+              <label for="Name">Branch Name</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Branch Name"  name="branch" require>
+            </div>
+           
+						<div class="col-md-6 mt-3 ml-2">
+              <label for="Name">Roll Number</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Roll Number"  name="rollNu"  require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ml-2  sm-3">
+              <label for="Name">Percentage Last Year</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Percentange Last Year" name="percentage" require>
+            </div>
+
+          	<div class="col-lg-6 mt-4 mb-3">
+              <button class="btn btn-secondary col-md-12" onclick="previousButton(event)">Previous</button>
+            </div>
+            
+						<div class="col-lg-6 mt-4">
+              <button class="btn btn-secondary  col-md-12" id='next4' onclick="nextButton(event)">Next</button>
+            </div>
+					</div>
+      </fieldset>
+      
+			<!-- fieldsets  Bank Information--->
+      <fieldset id="step5">
+				<div class="row mt-2">
+           <div class="col-md-12 mt-2 ">
+              <label for="Name">Bank Name</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Bank Name" name="bankName" require>
+            </div>
+            
+						<div class="col-md-12 mt-2 ">
+              <label for="Name">Branch Address</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter Your Branch Address" name="branch1"  require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">Account Number</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter  Your Account Number " name="account" require>
+            </div>
+            
+						<div class="col-md-6 mt-3 ">
+              <label for="Name">IFSC Number</label>
+              <input type="text" onkeyup="validation()" class="form-control" placeholder="Enter IFSC Number" name="ifsc"  require>
+            </div>
+            
+		
+          	<div class="col-lg-6 mt-4 mb-3">
+              <button class="btn btn-secondary col-md-12" onclick="previousButton(event)">Previous</button>
+            </div>
+            
+						<div class="col-lg-6 mt-4">
+              <button class="btn btn-secondary  col-md-12" id='next5' onclick="preview(event)">preview</button>
+            </div>
+
+            <div class="col-lg-6 mt-4">
+              <button class="btn btn-secondary  col-md-12"  onclick="submit(event)">Submit</button>
+            </div>
+          
+			   </div>
+			</fieldset>
+			     
+    </form>
+
+    <div class="container-fluid" id='preview' style="display:none">
+      <div class="row" >
+        <div class="col-md-12 mb-2" >
+        <header class="text-center p-2 bg-secondary mt-2 text-white">PERSONAL INFORMATION</header>
+        <div class='col-md-12 fx-3 bg-orange fx-2 text-info' style="height:auto" id="personalInfo"></div>
+       </div>
+       <div class="col-md-12 bg-grey mb-2" >
+        <header class="text-center p-2 bg-secondary text-white" style="height:auto">ADDRESS INFORMATION</header>
+        <div class='col-md-12 fx-3 bg-orange text-info' id="addressInfo"></div>
+       </div>
+       <div class="col-md-12 bg-grey mb-2">
+        <header class="text-center p-2 bg-secondary text-white" style="height:auto">INSTITUTE INFORMATION</header>
+        <div class='col-md-12 fx-3 bg-orange text-info' id="instituteInfo"></div>
+
+       </div>
+       <div class="col-md-12 bg-grey mb-2">
+         <header class="text-center p-2 bg-secondary text-white" style="height:auto">APPLICANT INFORMATION</header>
+         <div class='col-md-12 fx-3 bg-orange text-info' id="applicantInfo"></div>
+       </div>
+       <div class="col-md-12 bg-grey mb-2" >
+        <header class="text-center p-2  bg-secondary text-white" style="height:auto">ACCOUNT INFORMATION</header>
+        <div class='col-md-12 fx-3 bg-orange text-info' id="accountInfo"></div>
+       </div>
+      </div>
+      <button class="btn btn-secondary  col-md-6 ml-5" style="margin-left: 22%;" id='next2' onclick="preview(event)">Back</button>
+    </div>
+  </div>
+
+ 
+</body>
+
+<script src="script.js"></script>
+</html>

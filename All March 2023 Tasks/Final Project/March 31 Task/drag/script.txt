@@ -1,0 +1,54 @@
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  
+    function handleDragStart(e,item) {
+      console.log(item)
+      this.style.opacity = '0.4';   
+    }
+    
+    function handleDragEnd(e) {
+        var parent = document.getElementById("spin");
+      var nodesSameClass = parent.getElementsByClassName("box");
+      for(let i=1;i<nodesSameClass.length;i++){
+        console.log(parent.getElementsByClassName("box")[i].style.border);
+
+      }
+      this.style.opacity = '1';
+    }
+    
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      
+      return false;
+    }
+  
+    function handleDragEnter(e) {
+      this.classList.add('over');
+    }
+  
+    function handleDragLeave(e) {
+        console.log(this.classList)
+      this.classList.remove('over');
+    
+
+    }
+    
+    let items = document.querySelectorAll('.spring .box');
+    items.forEach(function(item) {
+          item.addEventListener('dragstart', 
+      (()=>{
+        console.log(document.getElementByClassName("box"))
+        handleDragStart(item);})
+      
+      , false);
+      item.addEventListener('dragover', handleDragOver, false);
+      item.addEventListener('dragenter', handleDragEnter, false);
+      item.addEventListener('dragleave', handleDragLeave, false);
+      item.addEventListener('dragend', handleDragEnd, false);
+    });
+  });
+
+
